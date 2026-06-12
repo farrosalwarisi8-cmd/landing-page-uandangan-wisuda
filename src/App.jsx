@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import CoverPage from '../src/components/CoverPage'
 import StorySection from '../src/components/StorySection'
 import EventDetails from '../src/components/EventDetails'
@@ -12,10 +12,18 @@ import CountdownTimer from '../src/components/CountdwonTimer'
 function App() {
   const [isOpened, setIsOpened] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const audioRef = useRef(null)
 
   const handleOpen = useCallback(() => {
     setIsOpened(true)
     document.body.style.overflow = 'auto'
+
+    if (audioRef.current) {
+      audioRef.current.volume = 0.35
+      audioRef.current.play().catch(() => {
+        // Autoplay may be blocked by browser until interaction.
+      })
+    }
   }, [])
 
   useEffect(() => {
@@ -72,6 +80,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-primary relative flex flex-col items-center">
+      <audio
+        ref={audioRef}
+        className="hidden"
+        src="/background-music.mp3"
+        loop
+        preload="auto"
+      />
       {!isOpened ? (
         <CoverPage onOpen={handleOpen} />
       ) : (

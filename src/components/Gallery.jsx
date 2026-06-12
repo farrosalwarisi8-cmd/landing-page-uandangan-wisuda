@@ -3,37 +3,37 @@ import { useState, useEffect } from 'react'
 const galleryImages = [
   {
     id: 1,
-    src: '/images/foto1.jpg',
+    src: '/img5.png',
     alt: 'Kenangan pesantren',
     caption: 'Kebersamaan di Pesantren',
   },
   {
     id: 2,
-    src: '/images/foto2.jpg',
+    src: '/img4.jpg',
     alt: 'Persiapan acara',
     caption: 'Persiapan Penuh Cinta',
   },
   {
     id: 3,
-    src: '/images/foto3.jpg',
+    src: '/img6.png',
     alt: 'Dress code',
     caption: 'Seragam Kebanggaan',
   },
   {
     id: 4,
-    src: '/images/foto4.jpg',
+    src: '/img1.jpg',
     alt: 'Taman pesantren',
     caption: 'Taman yang Menjadi Saksi',
   },
   {
     id: 5,
-    src: '/images/foto5.jpg',
+    src: '/img2.jpg',
     alt: 'Suasana pesantren',
     caption: 'Suasana yang Dirindukan',
   },
   {
     id: 6,
-    src: '/images/foto6.jpg',
+    src: '/img3.jpg',
     alt: 'Pakaian batik',
     caption: 'Batik Warisan Budaya',
   },
