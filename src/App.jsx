@@ -143,7 +143,7 @@ function App() {
 
                 <div className="reveal-on-scroll" style={{ transitionDelay: '1.1s' }}>
                   <p className="font-lora text-cream/50 text-sm md:text-base tracking-wider">
-                    Tingkat Akhir Tsanawiyah · Angkatan VI
+                    Tingkat Akhir Tsanawiyah · Angkatan IV
                   </p>
                   <p className="font-lora text-cream/40 text-xs md:text-sm tracking-wider mt-1">
                     Tahun Ajaran 2025 – 2026

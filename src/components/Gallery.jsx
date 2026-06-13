@@ -37,6 +37,12 @@ const galleryImages = [
     alt: 'Pakaian batik',
     caption: 'Batik Warisan Budaya',
   },
+  {
+    id: 7,
+    src: '/img7.png',
+    alt: 'Ruangan kelas',
+    caption: 'Ruangan kelas'
+  }
 ]
 
 export default function Gallery() {
