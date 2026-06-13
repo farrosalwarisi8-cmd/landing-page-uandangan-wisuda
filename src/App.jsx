@@ -17,12 +17,9 @@ function App() {
   const handleOpen = useCallback(() => {
     setIsOpened(true)
     document.body.style.overflow = 'auto'
-
     if (audioRef.current) {
-      audioRef.current.volume = 0.35
-      audioRef.current.play().catch(() => {
-        // Autoplay may be blocked by browser until interaction.
-      })
+      audioRef.current.volume = 0.4
+      audioRef.current.play().catch((err) => console.log('Audio play blocked:', err))
     }
   }, [])
 
@@ -32,7 +29,6 @@ function App() {
     }
   }, [isOpened])
 
-  // Scroll reveal animation
   useEffect(() => {
     if (!isOpened) return
 
@@ -46,7 +42,6 @@ function App() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed')
-
           const sectionId = entry.target.getAttribute('data-section')
           if (sectionId) {
             setActiveSection(sectionId)
@@ -61,25 +56,29 @@ function App() {
     return () => observer.disconnect()
   }, [isOpened])
 
-  // Parallax effect for decorative elements
-  useEffect(() => {
-    if (!isOpened) return
-
-    const handleScroll = () => {
-      const scrolled = window.scrollY
-      const parallaxElements = document.querySelectorAll('.parallax-element')
-      parallaxElements.forEach((el) => {
-        const speed = parseFloat(el.getAttribute('data-speed')) || 0.5
-        el.style.transform = `translateY(${scrolled * speed}px)`
-      })
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isOpened])
-
   return (
-    <div className="min-h-screen bg-primary relative flex flex-col items-center">
+    <div className="min-h-screen bg-primary relative flex flex-col items-center overflow-hidden">
+      {/* 🌟 BACKGROUND BATIK LAYER */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          backgroundImage: "url('/background.png')",
+          backgroundRepeat: 'repeat',
+          backgroundSize: '300px 300px',
+          opacity: 0.70,
+         
+        }}
+      ></div>
+
+      {/* 🌟 OVERLAY GRADIENT - bikin background menyatu dengan warna hitam */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.88) 60%, rgba(10,10,10,0.96) 100%)',
+        }}
+      ></div>
+
       <audio
         ref={audioRef}
         className="hidden"
@@ -87,10 +86,11 @@ function App() {
         loop
         preload="auto"
       />
+
       {!isOpened ? (
         <CoverPage onOpen={handleOpen} />
       ) : (
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center relative z-10">
           <FloatingParticles />
           <Navbar activeSection={activeSection} />
 
@@ -101,7 +101,6 @@ function App() {
               data-section="home"
               className="w-full min-h-screen flex items-center justify-center relative overflow-hidden reveal-on-scroll"
             >
-              {/* Background decorative circles */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full border border-gold/5 animate-rotate-slow"></div>
                 <div
@@ -154,7 +153,6 @@ function App() {
                   <CountdownTimer targetDate="2026-06-16T09:00:00" />
                 </div>
 
-                {/* Scroll indicator */}
                 <div className="reveal-on-scroll mt-16" style={{ transitionDelay: '1.5s' }}>
                   <div className="flex flex-col items-center gap-2 animate-float">
                     <span className="text-gold/40 text-xs tracking-widest uppercase">Scroll</span>
@@ -164,7 +162,6 @@ function App() {
               </div>
             </section>
 
-            {/* Wrapper untuk setiap section agar full width & ada gap */}
             <div className="w-full">
               <StorySection />
             </div>
