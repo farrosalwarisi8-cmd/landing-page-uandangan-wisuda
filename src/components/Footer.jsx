@@ -95,7 +95,7 @@ export default function Footer() {
                     Hormat Kami
                   </p>
                   <p className="mb-2 w-full text-center font-cormorant text-lg leading-relaxed tracking-wider text-cream/70 md:text-xl">
-                    Santriwati Angkatan VI
+                    Santriwati Angkatan IV
                   </p>
                   <p className="mb-2 w-full text-center font-scheherazade text-xl leading-[1.8] text-gold/50 md:text-2xl lg:text-3xl">
                     نَسْجُ الذِّكْرَيَاتِ وَتَحْقِيقُ الآمَالِ

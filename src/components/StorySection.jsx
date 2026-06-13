@@ -52,11 +52,11 @@ export default function StorySection() {
           </div>
           <div className="reveal-on-scroll" style={{ transitionDelay: '0.3s' }}>
             <p className="mt-4 w-full text-center font-lora text-sm leading-relaxed text-cream/40 md:text-base">
-              Santriwati Angkatan VI · 2025–2026
+              Santriwati Angkatan IV · 2025–2026
             </p>
           </div>
           <div className="reveal-on-scroll" style={{ transitionDelay: '0.4s' }}>
-            <div className="ornament-divider mx-auto mt-6 max-w-[120px]">
+            <div className="ornament-divider mx-auto mt-6 max-w-full">
               <span className="text-sm text-gold">❀</span>
             </div>
           </div>

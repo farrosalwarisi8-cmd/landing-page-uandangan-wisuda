@@ -91,7 +91,7 @@ export default function Gallery() {
           </p>
         </div>
         <div className="reveal-on-scroll" style={{ transitionDelay: '0.4s' }}>
-          <div className="ornament-divider max-w-[120px] mx-auto mt-6">
+          <div className="ornament-divider max-w-full mx-auto mt-6">
             <span className="text-gold text-sm">✦</span>
           </div>
         </div>

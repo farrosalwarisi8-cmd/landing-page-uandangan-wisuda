@@ -136,7 +136,7 @@ function App() {
                 </div>
 
                 <div className="reveal-on-scroll" style={{ transitionDelay: '0.9s' }}>
-                  <div className="ornament-divider max-w-xs mx-auto my-8">
+                  <div className="ornament-divider max-w-full mx-auto my-8">
                     <span className="text-gold text-2xl">✦</span>
                   </div>
                 </div>

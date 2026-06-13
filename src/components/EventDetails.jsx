@@ -24,7 +24,7 @@ export default function EventDetails() {
             </h2>
           </div>
           <div className="reveal-on-scroll" style={{ transitionDelay: '0.3s' }}>
-            <div className="ornament-divider mx-auto mt-6 max-w-[120px]">
+            <div className="ornament-divider mx-auto mt-6 max-w-full">
               <span className="text-sm text-gold">✦</span>
             </div>
           </div>
