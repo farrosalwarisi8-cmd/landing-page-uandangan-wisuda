@@ -59,11 +59,11 @@ export default function EventDetails() {
                 <h3 className="mb-4 w-full text-center font-scheherazade text-3xl leading-[1.6] text-gold md:text-4xl lg:text-5xl">
                   حَفْلَةُ تَوْدِيعِ الطَّالِبَاتِ
                 </h3>
-                <p className="w-full text-center font-cormorant text-lg leading-relaxed tracking-wider text-gold-light/80 md:text-xl lg:text-2xl">
-                  Pelepasan Santriwati
+                <p className="w-full leading-[3] text-center font-cormorant font-bold text-lg tracking-wider text-gold-light/80 md:text-xl lg:text-2xl">
+                  PELEPASAN SANTRIWATI
                 </p>
-                <p className="w-full text-center font-cormorant text-base leading-relaxed tracking-wider text-gold-light/60 md:text-lg">
-                  Tingkat Akhir Tsanawiyah
+                <p className="w-full text-center font-cormorant font-bold text-base leading-relaxed tracking-wider text-gold-light/60 md:text-lg">
+                  TINGKAT AKHIR TSANAWIYAH
                 </p>
                 <p className="mt-3 w-full text-center font-lora text-sm leading-relaxed text-cream/40">
                   Tahun Ajaran 2025 – 2026
@@ -147,39 +147,10 @@ export default function EventDetails() {
                 {/* Divider line */}
                 <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold/20 to-transparent md:w-48"></div>
 
-                {/* Dress code */}
-                <div className="group flex w-full flex-col items-center text-center md:max-w-md md:flex-row md:items-center md:gap-6 md:text-left">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/25 bg-gold/5 transition-colors group-hover:bg-gold/10 md:h-16 md:w-16">
-                    <svg className="h-5 w-5 text-gold md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                    </svg>
-                  </div>
-                  <div className="mt-4 flex-1 md:mt-0">
-                    <p className="mb-2 font-cormorant text-xs tracking-[0.3em] text-gold/60 uppercase md:text-sm">
-                      Dress Code
-                    </p>
-                    <p className="font-playfair text-xl leading-relaxed text-cream md:text-2xl">
-                      Kerudung Besar
-                    </p>
-                    <p className="mt-2 font-lora text-sm leading-relaxed text-cream/40 md:text-base">
-                      + Baju Bebas Sopan
-                    </p>
-                  </div>
-                </div>
+                
               </div>
 
-              {/* Quote */}
-              <div className="mt-16 w-full border-t border-gold/10 pt-12 text-center md:mt-20 md:pt-14">
-                <p className="mb-6 font-scheherazade text-2xl leading-[2] text-gold/70 md:text-3xl">
-                  وَقُلْ رَبِّ زِدْنِي عِلْمًا
-                </p>
-                <p className="font-lora text-sm leading-relaxed italic text-cream/50 md:text-base">
-                  "Dan katakanlah: Ya Tuhanku, tambahkanlah kepadaku ilmu."
-                </p>
-                <p className="mt-3 font-lora text-xs leading-normal text-cream/30 md:text-sm">
-                  — QS. Thaha: 114
-                </p>
-              </div>
+             
             </div>
           </div>
         </div>

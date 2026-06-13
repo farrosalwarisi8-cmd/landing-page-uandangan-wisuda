@@ -3,53 +3,40 @@ import { useState, useEffect } from 'react'
 const galleryImages = [
   {
     id: 1,
-    src: '/img5.png',
+    src: '/img1.png',
     alt: 'Kenangan pesantren',
     caption: 'Kebersamaan di Pesantren',
   },
   {
     id: 2,
-    src: '/img4.jpg',
+    src: '/img2.png',
     alt: 'Persiapan acara',
     caption: 'Persiapan Penuh Cinta',
   },
   {
     id: 3,
-    src: '/img6.png',
+    src: '/img3.png',
     alt: 'Dress code',
     caption: 'Seragam Kebanggaan',
   },
   {
     id: 4,
-    src: '/img1.jpg',
+    src: '/img4.png',
     alt: 'Taman pesantren',
     caption: 'Taman yang Menjadi Saksi',
   },
   {
     id: 5,
-    src: '/img2.jpg',
+    src: '/img5.png',
     alt: 'Suasana pesantren',
     caption: 'Suasana yang Dirindukan',
   },
-  {
-    id: 6,
-    src: '/img3.jpg',
-    alt: 'Pakaian batik',
-    caption: 'Batik Warisan Budaya',
-  },
-  {
-    id: 7,
-    src: '/img7.png',
-    alt: 'Ruangan kelas',
-    caption: 'Ruangan kelas'
-  }
 ]
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [imageLoaded, setImageLoaded] = useState({})
 
-  // Close lightbox on escape
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setSelectedImage(null)
@@ -58,7 +45,6 @@ export default function Gallery() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
-  // Prevent body scroll when lightbox is open
   useEffect(() => {
     if (selectedImage) {
       document.body.style.overflow = 'hidden'
@@ -97,15 +83,19 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Gallery grid */}
+      {/* Gallery grid - MOBILE: 1 kolom stack vertikal, DESKTOP: grid 3 kolom */}
       <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-4">
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className={`reveal-on-scroll group relative overflow-hidden rounded-xl md:rounded-2xl cursor-pointer
-                         ${index === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''}
-                         ${index === 1 ? 'aspect-square' : index === 0 ? 'aspect-[4/3] md:aspect-auto' : 'aspect-square'}`}
+              className={`reveal-on-scroll group relative overflow-hidden rounded-xl md:rounded-2xl cursor-pointer bg-dark-card
+                         ${/* Desktop only: gambar pertama jadi besar */ ''}
+                         ${index === 0 ? 'md:col-span-1 md:row-span-2' : ''}
+                         ${/* Mobile: aspect ratio dinamis (tidak kepotong) */ ''}
+                         ${/* Desktop: aspect square */ ''}
+                         md:aspect-square
+                         ${index === 0 ? 'md:aspect-auto' : ''}`}
               style={{ transitionDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedImage(image)}
             >
@@ -114,17 +104,19 @@ export default function Gallery() {
                 <div className="absolute inset-0 bg-dark-card animate-pulse"></div>
               )}
 
+              {/* MOBILE: gambar tampil full (tidak terpotong)
+                  DESKTOP: cover dengan crop */}
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110
+                className={`w-full h-auto md:h-full md:object-cover transition-transform duration-700 group-hover:scale-105 md:group-hover:scale-110
                            ${imageLoaded[image.id] ? 'opacity-100' : 'opacity-0'}`}
                 onLoad={() => handleImageLoad(image.id)}
                 loading="lazy"
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              {/* Overlay caption */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
                   <p className="font-cormorant text-cream text-sm md:text-lg tracking-wider">
                     {image.caption}
@@ -134,7 +126,7 @@ export default function Gallery() {
               </div>
 
               {/* Gold border on hover */}
-              <div className="absolute inset-0 border border-gold/0 group-hover:border-gold/30 rounded-xl md:rounded-2xl transition-colors duration-500"></div>
+              <div className="absolute inset-0 border border-gold/20 md:border-gold/0 md:group-hover:border-gold/30 rounded-xl md:rounded-2xl transition-colors duration-500"></div>
             </div>
           ))}
         </div>
