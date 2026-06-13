@@ -58,24 +58,28 @@ function App() {
 
   return (
     <div className="min-h-screen bg-primary relative flex flex-col items-center overflow-hidden">
-      {/* 🌟 BACKGROUND BATIK LAYER */}
+      {/* 🌟 BASE BLACK BACKGROUND */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-primary"></div>
+
+      {/* 🌟 BACKGROUND IMAGE - FULL SELAYAR JADI BINGKAI */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          backgroundImage: "url('/background.png')",
-          backgroundRepeat: 'repeat',
-          backgroundSize: '300px 300px',
-          opacity: 0.70,
-         
+          backgroundImage: "url('/background2.png')",
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '100% 100%',          // ✅ FULL SELAYAR, ngepas
+          backgroundPosition: 'center center',
+          backgroundAttachment: 'fixed',
+          opacity: 1,                            // ✅ Full opacity
         }}
       ></div>
 
-      {/* 🌟 OVERLAY GRADIENT - bikin background menyatu dengan warna hitam */}
+      {/* 🌟 DARK OVERLAY TIPIS - bagian tengah biar konten kebaca, pinggir emas tetap kelihatan */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.88) 60%, rgba(10,10,10,0.96) 100%)',
+            'radial-gradient(ellipse at center, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.55) 50%, transparent 90%)',
         }}
       ></div>
 
