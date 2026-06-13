@@ -80,31 +80,7 @@ export default function Footer() {
                   Wassalamu'alaikum Warahmatullahi Wabarakatuh
                 </p>
               </div>
-
-              {/* Bottom signature */}
-              <div
-                className="reveal-on-scroll flex w-full flex-col items-center text-center"
-                style={{ transitionDelay: '0.8s' }}
-              >
-                {/* Top divider line */}
-                <div className="mx-auto mb-10 h-px w-32 bg-gradient-to-r from-transparent via-gold/20 to-transparent md:mb-12 md:w-48"></div>
-
-                {/* Signature content */}
-                <div className="flex w-full flex-col items-center text-center">
-                  <p className="mb-3 w-full text-center font-cormorant text-xs tracking-[0.3em] text-cream/40 uppercase md:text-sm">
-                    Hormat Kami
-                  </p>
-                  <p className="mb-2 w-full text-center font-cormorant text-lg leading-relaxed tracking-wider text-cream/70 md:text-xl">
-                    Santriwati Angkatan IV
-                  </p>
-                  <p className="mb-2 w-full text-center font-scheherazade text-xl leading-[1.8] text-gold/50 md:text-2xl lg:text-3xl">
-                    نَسْجُ الذِّكْرَيَاتِ وَتَحْقِيقُ الآمَالِ
-                  </p>
-                  <p className="w-full text-center font-playfair text-sm italic leading-relaxed text-gold-light/50 md:text-base">
-                    Merajut Kenangan, Meraih Asa
-                  </p>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
