@@ -11,13 +11,13 @@ const galleryImages = [
     id: 2,
     src: '/img2.png',
     alt: 'Persiapan acara',
-    caption: 'Persiapan Penuh Cinta',
+    caption: 'Seragam Kebanggaan',
   },
   {
     id: 3,
     src: '/img3.png',
     alt: 'Dress code',
-    caption: 'Seragam Kebanggaan',
+    caption: 'Persiapan Penuh Cinta',
   },
   {
     id: 4,

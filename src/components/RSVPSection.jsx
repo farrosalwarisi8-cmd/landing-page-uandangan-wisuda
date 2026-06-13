@@ -87,7 +87,7 @@ export default function RSVPSection() {
                   <span className="font-semibold text-gold-light/90">
                     Asatidzah Hafidzakumullohu
                   </span>
-                  , serta teman-teman yang kami cintai.
+                  , serta <span className="font-semibold text-gold-light/90">teman-teman yang kami cintai</span>.
                 </p>
 
                 {/* Paragraf 2 */}

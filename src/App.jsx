@@ -7,7 +7,6 @@ import RSVPSection from '../src/components/RSVPSection'
 import Footer from '../src/components/Footer'
 import FloatingParticles from '../src/components/FloatingParticiples'
 import Navbar from '../src/components/Navbar'
-import CountdownTimer from '../src/components/CountdwonTimer'
 
 function App() {
   const [isOpened, setIsOpened] = useState(false)
@@ -67,14 +66,14 @@ function App() {
         style={{
           backgroundImage: "url('/background2.png')",
           backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% 100%',          // ✅ FULL SELAYAR, ngepas
+          backgroundSize: '100% 100%',
           backgroundPosition: 'center center',
           backgroundAttachment: 'fixed',
-          opacity: 1,                            // ✅ Full opacity
+          opacity: 1,
         }}
       ></div>
 
-      {/* 🌟 DARK OVERLAY TIPIS - bagian tengah biar konten kebaca, pinggir emas tetap kelihatan */}
+      {/* 🌟 DARK OVERLAY TIPIS */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -113,51 +112,70 @@ function App() {
                 ></div>
               </div>
 
-              <div className="text-center px-6 py-20 relative z-10">
-                <div className="reveal-on-scroll" style={{ transitionDelay: '0.1s' }}>
-                  <p className="font-amiri text-gold/70 text-sm md:text-base tracking-[0.3em] uppercase mb-4">
+              {/* 🌟 KONTEN HERO */}
+              <div className="text-center px-6 py-20 relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-8 md:gap-10 lg:gap-12">
+                
+                {/* Bismillah */}
+                <div className="reveal-on-scroll w-full" style={{ transitionDelay: '0.1s' }}>
+                  <p className="font-amiri text-gold/70 text-sm md:text-base lg:text-lg tracking-[0.3em] uppercase">
                     بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
                   </p>
                 </div>
 
-                <div className="reveal-on-scroll" style={{ transitionDelay: '0.3s' }}>
-                  <h2 className="font-cormorant text-cream/60 text-lg md:text-xl font-light tracking-widest uppercase mb-6">
-                    Pelepasan Santriwati
-                  </h2>
-                </div>
-
-                <div className="reveal-on-scroll" style={{ transitionDelay: '0.5s' }}>
-                  <h1 className="font-scheherazade text-4xl md:text-6xl lg:text-7xl text-gold mb-4 leading-tight">
-                    نَسْجُ الذِّكْرَيَاتِ وَتَحْقِيقُ الآمَالِ
-                  </h1>
-                </div>
-
-                <div className="reveal-on-scroll" style={{ transitionDelay: '0.7s' }}>
-                  <p className="font-playfair text-xl md:text-2xl lg:text-3xl text-gold-light/80 italic mb-2">
-                    Merajut Kenangan, Meraih Asa
+                {/* SALAM - Arab Besar */}
+                <div className="reveal-on-scroll w-full flex flex-col items-center gap-3 md:gap-4" style={{ transitionDelay: '0.3s' }}>
+                  <p className="font-scheherazade text-3xl md:text-4xl lg:text-5xl text-gold leading-[1.8] w-full text-center">
+                    اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ
+                  </p>
+                  <p className="font-lora text-cream/60 text-xs md:text-sm lg:text-base tracking-[0.2em] italic">
+                    Assalamu'alaikum Warahmatullahi Wabarakatuh
                   </p>
                 </div>
 
-                <div className="reveal-on-scroll" style={{ transitionDelay: '0.9s' }}>
-                  <div className="ornament-divider max-w-full mx-auto my-8">
-                    <span className="text-gold text-2xl">✦</span>
-                  </div>
+                {/* Ornament Divider */}
+                <div className="reveal-on-scroll w-full flex items-center justify-center gap-3" style={{ transitionDelay: '0.5s' }}>
+                  <span className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-gold/40"></span>
+                  <span className="text-gold text-lg md:text-xl">✦</span>
+                  <span className="h-px w-12 md:w-20 bg-gradient-to-l from-transparent to-gold/40"></span>
                 </div>
 
-                <div className="reveal-on-scroll" style={{ transitionDelay: '1.1s' }}>
+                {/* Pesan Syukur - Paragraf */}
+                <div className="reveal-on-scroll w-full" style={{ transitionDelay: '0.7s' }}>
+                  <p className="font-lora text-sm md:text-base lg:text-lg text-cream/75 leading-[2] md:leading-[2.2] max-w-2xl mx-auto text-center">
+                    Puji syukur kehadirat{' '}
+                    <span className="font-semibold text-gold-light/90">Allah Ta'ala</span>{' '}
+                    atas segala nikmat-Nya. Melalui pesan digital ini, izinkan kami
+                    membagikan kabar bahagia atas selesainya masa studi kami di
+                  </p>
+                </div>
+
+                {/* Nama Pesantren - Sorot */}
+                <div className="reveal-on-scroll w-full flex flex-col items-center gap-3 md:gap-4" style={{ transitionDelay: '0.9s' }}>
+                  <div className="flex items-center gap-3">
+                    <span className="h-px w-8 bg-gold/40"></span>
+                    <span className="text-gold/60 text-xs tracking-[0.3em] uppercase font-cormorant">Ma'had</span>
+                    <span className="h-px w-8 bg-gold/40"></span>
+                  </div>
+                  <h1 className="font-cormorant text-2xl md:text-4xl lg:text-5xl text-gold tracking-[0.15em] uppercase font-light text-center leading-tight">
+                    Nurus Sunnah
+                  </h1>
+                  <p className="font-playfair text-base md:text-lg lg:text-xl text-gold-light/80 italic tracking-wider">
+                    Tegal
+                  </p>
+                </div>
+
+                {/* Info Angkatan */}
+                <div className="reveal-on-scroll w-full flex flex-col items-center gap-1.5" style={{ transitionDelay: '1.1s' }}>
                   <p className="font-lora text-cream/50 text-sm md:text-base tracking-wider">
                     Tingkat Akhir Tsanawiyah · Angkatan IV
                   </p>
-                  <p className="font-lora text-cream/40 text-xs md:text-sm tracking-wider mt-1">
+                  <p className="font-lora text-cream/40 text-xs md:text-sm tracking-wider">
                     Tahun Ajaran 2025 – 2026
                   </p>
                 </div>
 
-                <div className="reveal-on-scroll mt-12" style={{ transitionDelay: '1.3s' }}>
-                  <CountdownTimer targetDate="2026-06-16T09:00:00" />
-                </div>
-
-                <div className="reveal-on-scroll mt-16" style={{ transitionDelay: '1.5s' }}>
+                {/* Scroll Indicator */}
+                <div className="reveal-on-scroll mt-4 md:mt-6" style={{ transitionDelay: '1.3s' }}>
                   <div className="flex flex-col items-center gap-2 animate-float">
                     <span className="text-gold/40 text-xs tracking-widest uppercase">Scroll</span>
                     <div className="w-px h-8 bg-gradient-to-b from-gold/40 to-transparent"></div>
@@ -167,11 +185,11 @@ function App() {
             </section>
 
             <div className="w-full">
-              <StorySection />
+              <EventDetails />
             </div>
 
             <div className="w-full">
-              <EventDetails />
+              <StorySection />
             </div>
 
             <div className="w-full">

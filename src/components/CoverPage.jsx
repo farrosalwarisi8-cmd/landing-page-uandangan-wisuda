@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import CountdownTimer from './CountdwonTimer' // 👈 Import CountdownTimer
 
 export default function CoverPage({ onOpen }) {
   const [isVisible, setIsVisible] = useState(false)
@@ -22,7 +23,7 @@ export default function CoverPage({ onOpen }) {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-primary">
       {/* Wrapper konten dengan min-height & padding */}
-      <div className="relative flex min-h-screen w-full items-center justify-center px-4 py-8 sm:px-6 md:py-12">
+      <div className="relative flex min-h-screen w-full items-center justify-center px-4 py-10 sm:px-6 md:py-16">
         {/* Animated background elements - full mengikuti tinggi parent */}
         <div className="pointer-events-none absolute inset-0 h-full w-full">
           {/* Corner ornaments */}
@@ -55,19 +56,19 @@ export default function CoverPage({ onOpen }) {
             />
           ))}
 
-          {/* Gradient overlays - FULL HEIGHT mengikuti konten */}
+          {/* Gradient overlays */}
           <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-gold/5 via-transparent to-gold/5"></div>
           <div className="absolute inset-0 h-full w-full bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)]"></div>
         </div>
 
-        {/* Main content - center sempurna */}
+        {/* Main content - center sempurna dengan gap antar elemen */}
         <div
-          className={`relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center justify-center px-2 text-center transition-all duration-[2000ms] ease-out sm:px-4
+          className={`relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center justify-center gap-10 px-2 text-center transition-all duration-[2000ms] ease-out sm:px-4 sm:gap-12 md:gap-14 lg:gap-16
                      ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           {/* Bismillah */}
           <div
-            className={`mb-8 flex w-full flex-col items-center text-center transition-all duration-1000 delay-500 md:mb-10
+            className={`flex w-full flex-col items-center text-center transition-all duration-1000 delay-500
                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6'}`}
           >
             <p className="w-full text-center font-scheherazade text-xl leading-[2] text-gold/60 md:text-2xl lg:text-3xl">
@@ -75,62 +76,9 @@ export default function CoverPage({ onOpen }) {
             </p>
           </div>
 
-          {/* Greeting */}
-          <div
-            className={`mb-10 flex w-full flex-col items-center text-center transition-all duration-1000 delay-700 md:mb-12
-                       ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-          >
-            <p className="mb-4 w-full text-center font-amiri text-2xl leading-[1.8] text-gold md:text-3xl lg:text-4xl">
-              اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ
-            </p>
-            <p className="w-full text-center font-lora text-xs leading-relaxed tracking-[0.15em] text-cream/50 md:text-sm">
-              Assalamu'alaikum Warahmatullahi Wabarakatuh
-            </p>
-          </div>
-
-          {/* Ornament divider */}
-          <div
-            className={`ornament-divider mx-auto mb-10 w-full max-w-[200px] transition-all duration-1000 delay-900 md:mb-12
-                       ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-          >
-            <span className="text-lg text-gold">❀</span>
-          </div>
-
-          {/* Invitation text */}
-          <div
-            className={`mb-10 flex w-full flex-col items-center text-center transition-all duration-1000 delay-1000 md:mb-12
-                       ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-          >
-            <p className="mx-auto mb-3 w-full max-w-md text-center font-lora text-sm leading-[1.9] text-cream/70 md:text-base md:leading-[2]">
-              Puji syukur kehadirat Allah Ta'ala atas segala nikmat-Nya. Melalui pesan digital ini, izinkan kami membagikan kabar bahagia atas selesainya masa studi kami di
-              <span className='font-bold'> MA'HAD NURUS SUNNAH TEGAL</span>
-            </p>
-            <p className="mx-auto w-full max-w-md text-center font-lora text-sm leading-[1.9] text-cream/70 md:text-base md:leading-[2]">
-              kami mengundang Ustadzah &amp; seluruh santri
-              <br className="hidden sm:block" />
-              untuk hadir dalam acara
-            </p>
-          </div>
-
-          {/* Event title */}
-          <div
-            className={`mb-10 flex w-full flex-col items-center text-center transition-all duration-1000 delay-[1200ms] md:mb-12
-                       ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
-          >
-            <h1 className="mb-4 w-full text-center font-cormorant text-xl leading-relaxed tracking-[0.2em] text-gold-light/80 uppercase md:text-2xl lg:text-3xl">
-              Pelepasan Santriwati
-            </h1>
-            <h2 className="mb-3 w-full text-center font-cormorant text-base leading-relaxed tracking-wider text-cream/60 md:text-lg lg:text-xl">
-              Tingkat Akhir Tsanawiyah
-            </h2>
-            <p className="w-full text-center font-lora text-xs leading-relaxed tracking-[0.2em] text-cream/40 md:text-sm">
-              Angkatan IV · 2025–2026
-            </p>
-          </div>
-
           {/* Ornament */}
           <div
-            className={`ornament-divider mx-auto mb-10 w-full max-w-[200px] transition-all duration-1000 delay-[1400ms] md:mb-12
+            className={`ornament-divider mx-auto w-full max-w-[200px] transition-all duration-1000 delay-[1400ms]
                        ${isVisible ? 'opacity-100' : 'opacity-0'}`}
           >
             <span className="text-lg text-gold">✦</span>
@@ -138,28 +86,39 @@ export default function CoverPage({ onOpen }) {
 
           {/* Kepada label */}
           <div
-            className={`mb-10 flex w-full flex-col items-center text-center transition-all duration-1000 delay-[1500ms] md:mb-12
+            className={`flex w-full flex-col items-center gap-3 text-center transition-all duration-1000 delay-[1500ms] md:gap-4
                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
-            <p className="mb-3 w-full text-center font-lora text-xs leading-relaxed tracking-[0.3em] text-cream/40 uppercase">
+            <p className="w-full text-center font-lora text-xs leading-relaxed tracking-[0.3em] text-cream/40 uppercase">
               Kepada Yth.
             </p>
             <p className="w-full text-center font-playfair text-lg leading-relaxed italic text-gold md:text-xl lg:text-2xl">
-              Para Ustadzah &amp; Teman teman
+              Orang tua, Para Ustadzah &amp; Teman teman
             </p>
           </div>
 
-          {/* Open button */}
+          {/* 🌟 COUNTDOWN TIMER - di atas button */}
+          <div
+            className={`flex w-full flex-col items-center gap-4 transition-all duration-1000 delay-[1600ms] md:gap-5
+                       ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          >
+            <p className="w-full text-center font-cormorant text-xs tracking-[0.3em] text-gold/60 uppercase md:text-sm">
+              Menuju Hari Bahagia
+            </p>
+            <CountdownTimer targetDate="2026-06-16T09:00:00" />
+          </div>
+
+          {/* Open button - dengan spacing dari timer */}
           <div
             className={`flex w-full flex-col items-center transition-all duration-1000 delay-[1800ms]
                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             <button
               onClick={onOpen}
-              className="mt-4 group relative inline-flex cursor-pointer items-center justify-center gap-3 rounded-lg border border-gold/50 px-8 py-3.5 w-70 h-10 font-lora text-sm tracking-[0.2em] text-gold uppercase transition-all duration-500 hover:border-gold hover:bg-gold/10 animate-pulse-gold"
+              className="group relative inline-flex cursor-pointer items-center justify-center w-60 h-10 gap-3 rounded-lg border border-gold/50 px-8 py-3.5 font-lora text-sm tracking-[0.2em] text-gold uppercase transition-all duration-500 hover:border-gold hover:bg-gold/10 animate-pulse-gold md:px-10 md:py-4 md:text-[15px]"
             >
               <svg
-                className="h-4 w-4 pl-3 -translate-x-1 transition-transform group-hover:translate-x-0"
+                className="h-4 w-4 -translate-x-1 transition-transform group-hover:translate-x-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

@@ -3,7 +3,6 @@ const stories = [
     id: 'pertemuan',
     title: 'Pertemuan',
     arabicTitle: 'اللِّقَاءُ',
-    icon: '/icon.png', // 👈 ganti dengan path gambar kamu
     content:
       'Pertemanan kami bermula pada hari-hari pertama di pesantren, saat rasa gugup dan rindu rumah masih menyelimuti hati. Berawal dari senyum dan sapaan sederhana, kami perlahan saling mengenal, belajar bersama, berbagi cerita, dan saling menguatkan, hingga tanpa terasa terjalin persahabatan yang indah dan penuh kenangan.',
   },
@@ -11,7 +10,6 @@ const stories = [
     id: 'perjuangan',
     title: 'Perjuangan',
     arabicTitle: 'الكِفَاحُ',
-    icon: '/icon.png', // 👈 ganti dengan path gambar kamu
     content:
       'Bersama teman-teman, kami menjalani hari-hari di pesantren dengan penuh perjuangan; bangun di sepertiga malam, menghafal pelajaran, menghadapi berbagai ujian, dan menahan rindu kepada keluarga. Meski tidak selalu mudah, kebersamaan, canda, dan saling menyemangati membuat setiap kesulitan terasa lebih ringan hingga akhirnya menjadi kenangan berharga yang akan selalu kami ingat.',
   },
@@ -19,7 +17,6 @@ const stories = [
     id: 'perpisahan',
     title: 'Perpisahan',
     arabicTitle: 'الوَدَاعُ',
-    icon: '/icon.png', // 👈 ganti dengan path gambar kamu
     content:
       'Tak terasa, perjalanan yang dulu diawali dengan langkah-langkah ragu kini sampai pada titik perpisahan. Di tempat yang menjadi saksi tawa, air mata, perjuangan, dan doa-doa yang dipanjatkan bersama, kami belajar bahwa setiap pertemuan pasti memiliki akhir. Meski kelak jalan kami berbeda, kenangan yang terukir di pesantren ini akan tetap hidup dalam hati, menjadi pengingat indah tentang persahabatan, ilmu, dan kebersamaan yang pernah kami miliki.',
   },
@@ -88,16 +85,6 @@ export default function StorySection() {
                       Bagian {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className="h-px w-8 bg-gradient-to-l from-transparent to-gold/40"></span>
-                  </div>
-
-                  {/* Icon - GAMBAR */}
-                  <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-gold/20 bg-gold/5 transition-colors group-hover:bg-gold/10 md:h-28 md:w-28 lg:h-32 lg:w-32 overflow-hidden">
-                    <img
-                      src={story.icon}
-                      alt={story.title}
-                      className="h-12 w-12 object-contain transition-transform duration-500 group-hover:scale-110 md:h-16 md:w-16 lg:h-20 lg:w-20"
-                      loading="lazy"
-                    />
                   </div>
 
                   {/* Arabic title */}
