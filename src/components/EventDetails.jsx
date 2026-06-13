@@ -112,10 +112,10 @@ export default function EventDetails() {
                       Waktu
                     </p>
                     <p className="font-playfair text-xl leading-relaxed text-cream md:text-2xl">
-                      Jam 09.00 WPB – Selesai
+                      Jam 09.00 WIB – Selesai
                     </p>
                     <p className="mt-2 font-lora text-sm leading-relaxed text-cream/40 md:text-base">
-                      (Waktu Pondok Banat)
+                      (Waktu Indonesia Barat)
                     </p>
                   </div>
                 </div>

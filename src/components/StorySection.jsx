@@ -19,7 +19,7 @@ const stories = [
     id: 'perpisahan',
     title: 'Perpisahan',
     arabicTitle: 'الوَدَاعُ',
-    icon: '🕊',
+    icon: '🌸',
     content:
       'Tak terasa, perjalanan yang dulu diawali dengan langkah-langkah ragu kini sampai pada titik perpisahan. Di tempat yang menjadi saksi tawa, air mata, perjuangan, dan doa-doa yang dipanjatkan bersama, kami belajar bahwa setiap pertemuan pasti memiliki akhir. Meski kelak jalan kami berbeda, kenangan yang terukir di pesantren ini akan tetap hidup dalam hati, menjadi pengingat indah tentang persahabatan, ilmu, dan kebersamaan yang pernah kami miliki.',
   },

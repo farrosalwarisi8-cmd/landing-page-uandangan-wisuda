@@ -142,7 +142,7 @@ export default function CoverPage({ onOpen }) {
             Kepada Yth.
           </p>
           <p className="w-full text-center font-playfair text-lg leading-relaxed italic text-gold md:text-xl lg:text-2xl">
-            Ustadzah &amp; Seluruh Santri
+            Para Ustadzah &amp; Teman teman
           </p>
         </div>
 

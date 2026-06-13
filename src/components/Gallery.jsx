@@ -86,7 +86,7 @@ export default function Gallery() {
           </h2>
         </div>
         <div className="reveal-on-scroll" style={{ transitionDelay: '0.3s' }}>
-          <p className="font-lora text-cream/40 text-sm md:text-base mt-3 max-w-lg mx-auto">
+          <p className="font-lora text-cream/40 text-sm md:text-base mt-3 max-w-full mx-auto text-center">
             Setiap momen adalah hadiah yang tak ternilai
           </p>
         </div>
