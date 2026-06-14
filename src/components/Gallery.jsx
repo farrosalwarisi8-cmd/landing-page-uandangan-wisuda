@@ -23,7 +23,7 @@ const galleryImages = [
     id: 4,
     src: '/img4.png',
     alt: 'Taman pesantren',
-    caption: 'Taman yang Menjadi Saksi',
+    caption: 'Kebersamaan yang terajut',
   },
   {
     id: 5,
